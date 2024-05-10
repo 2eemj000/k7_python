@@ -36,6 +36,8 @@ b=9
 # print(a,b)
 
 # # a,b=map(int, input().split())
+#  map에 int와 input().split()을 넣으면 split의 결과를 모두 int로 변환
+
 # b, a=a, b
 # print(a,b)
 
@@ -50,11 +52,29 @@ print(msg[1])
 # msg[0]='H'
 # print(msg) -> error (string은 한번 할당되면 바꿀 수 없음)
 
-# f-문자열
+# f-문자열 : 문자열안에 변수를 사용
 a='hello'
 b='world'
 def add(a,b):
     return a+b
 print(f'{a},{b}, {add(1,2)}! hahahaha!')
 
-# 수정
+# \n, \t
+print(f'{a},{b}, {add(1,2)}! \nhahahaha!')
+print(f'{a},{b}, {add(1,2)}! \thahahaha!')
+
+# strip() : 공백제거
+msg="  hell  o       "
+print(len(msg))
+print(len(msg.rstrip()))
+print(len(msg.lstrip()))
+print(len(msg.lstrip().rstrip()))
+print(len(msg.strip()))
+print(len(msg))
+
+msg='hello, hello, hello, world!'
+print(msg.replace('hello','Hello').replace(',',''))
+print(msg)
+msg='hello, hello\', hello, world!'
+print(msg)
+
