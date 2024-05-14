@@ -1,17 +1,17 @@
 # 주어진 함수 정의
 def func(x):
-    return 5 * x ** 2 + 5 * x + 7
+    return 5 * x ** 2 -3 * x + 11
 
 # 도함수(미분) 계산
 def derivative(x):
-    return 10 * x + 5
+    return 10 * x - 3
 
 # 경사 하강법을 사용하여 기울기가 0인 지점 찾기
-def gradient_descent(learning_rate, initial_x, epochs):
+def gradient_descent(learning_rate, initial_x, epochs): # 0부터 시작해서 1000번 하겠다
     x = initial_x
     for _ in range(epochs):
         gradient = derivative(x)
-        x = x - learning_rate * gradient
+        x = x - learning_rate * gradient # learning_rate * gradient이 0이 되면 x값 그대로 (기울기가 0인 지점)
     return x
 
 # 학습률, 초기값, 반복 횟수 설정
