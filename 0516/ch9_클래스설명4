@@ -1,0 +1,4 @@
+from electric_car import *
+# *은 전부 다 가져오는 것
+
+my_leaf = ElectricCar('nissan', 'leaf', 2023)
