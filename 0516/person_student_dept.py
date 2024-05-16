@@ -35,7 +35,18 @@ class MyList:
         self.data = data
     def __getitem__(self,index):
         return self.data[index]
+    def __str__(self):
+        return '\n'.join(str(item) for item in self.data)
+    
+def detail_tList(obj):
+    if isinstance(obj, Person):
+        if isinstance(obj, Student):
+            return (f"Student(pid={obj.pid}, pname={obj.pname}, age={obj.age}, "
+                    f"sid={obj.sid}, syear={obj.syear}, sdept={obj.sdept.department})")
+        return f"Person(pid={obj.pid}, pname={obj.pname}, age={obj.age})"
+    elif isinstance(obj, Dept):
+        return f"Dept(department={obj.department})"
+    return str(obj)
 
 tList=MyList([s1,s2,p3,p4,p5,p6,p7,s8,s9,s10])
-print(tList)
-
+print('\n'.join(detail_tList(item) for item in tList))
