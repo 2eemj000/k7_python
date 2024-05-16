@@ -58,26 +58,74 @@
 # # min_max = list(min(n_list),max(n_list),end=" ")
 # print(min(n_list), max(n_list),  end=" ")
 
-# N은 바구니갯수, M은 공을 넣는 총 회차
-# i번 바구니부터 j번 바구니까지에 k번 번호가 적혀져 있는 공을 넣음
-# list는 변경가능한 mutable
-N,M=map(int, input().split())
-arr = list(range(1,N+1))
-# a++라는 표현식은 파이썬에서 X, 대신에 a += 1과 같은 방식으로 사용
-    # for (int a=1;a<M+1,a++):
-    #     if (a>=i)&(a<=j):
-    #         arr[a-1]=k
-# 리스트 슬라이싱은 리스트의 일부분을 복사하여 반환하는 것이므로 단일 값을 할당하는데 사용X
-# 대신에 각 인덱스를 반복하여 값을 할당해야함
-    # for k in range(1, M+1):
-    #     i,j=map(int, input().split())
-    #     arr[range(i,j+1,1)] = k
-    # print(arr)
-for k in range(1,M):
-    i,j= map(int, input().split())
-    for idx in range(i-1, j):
-        arr[idx] = k
-for i in range(N):
-    print(arr[i], end=' ')
+# # N은 바구니갯수, M은 공을 넣는 총 회차
+# # i번 바구니부터 j번 바구니까지에 k번 번호가 적혀져 있는 공을 넣음
+# # list는 변경가능한 mutable
+# N,M=map(int, input().split())
+# arr = [0]*(N+1)
+# # a++라는 표현식은 파이썬에서 X, 대신에 a += 1과 같은 방식으로 사용
+#     # for (int a=1;a<M+1,a++):
+#     #     if (a>=i)&(a<=j):
+#     #         arr[a-1]=k
+# # 리스트 슬라이싱은 리스트의 일부분을 복사하여 반환하는 것이므로 단일 값을 할당하는데 사용X
+# # 대신에 각 인덱스를 반복하여 값을 할당해야함
+#     # for k in range(1, M+1):
+#     #     i,j=map(int, input().split())
+#     #     arr[range(i,j+1,1)] = k
+#     # print(arr)
+# for _ in range(M):
+#     i, j, k = map(int, input().split())
+#     for n in range(i, j+1):
+#         arr[n] = k
+# for i in range(1,N+1):
+#     print(arr[i], end=' ')
 
-    # 10810 마저 하기 ~
+# N,M=map(int, input().split())
+# list=[i for i in range(1,N+1)]
+# for i in range(M):
+#     i, j = map(int, input().split())
+#     # 파이썬에서는 제3의 변수 둘필요 없이 바로 바꿔치기 가능
+#     list[i-1],list[j-1] = list[j-1],list[i-1]
+# for i in range(N):
+#     print(list[i], end=' ')
+
+# N,M=map(int, input().split())
+# list=[i for i in range(1,N+1)]
+# for i in range(M):
+#     i,j=map(int, input().split())
+#     myList=list[i-1:j]
+#     myList.reverse()
+#     list[i-1:j]=myList
+# for i in range(N):
+#     print(list[i], end=' ')
+
+# print(len(input()))
+
+# a = input()
+# print(ord(a))
+
+# S = list(input())
+# c = 'abcdefghijklmnopqrstuvwxyz'
+# for a in c:
+#     if a in S:
+#         print(S.index(a), end =' ')
+#     else:
+#         print(-1, end=' ')
+
+# s = int(input())
+# for _ in range(s):
+#     cnt, printing = input().split()
+#     for s in printing:
+#         print(s*int(cnt), end='')  
+#     print()
+
+# 2+h-1=h+1
+
+# dial = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ']
+# msg = input()  # 입력받는 단어
+# totalNum = 0 # 시간합계
+# for j in range(len(msg)): # msg의 첫번째 알파벳부터 1개씩 돌면서
+#     for i in dial: # dial에 포함되는지 첫번째ABC부터 8를 다 돈다
+#         if msg[j] in i: # 해당문자가 포함되면
+#             totalNum += dial.index(i)+3 # 그 인덱스(문자열이 2시 위치부터 존재하니까 +3)
+# print(totalNum)
