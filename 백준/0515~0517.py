@@ -103,6 +103,8 @@
 
 # a = input()
 # print(ord(a))
+# ord(문자)
+# 하나의 문자를 인자로 받고 해당 문자에 해당하는 유니코드 정수를 반환
 
 # S = list(input())
 # c = 'abcdefghijklmnopqrstuvwxyz'
@@ -129,3 +131,32 @@
 #         if msg[j] in i: # 해당문자가 포함되면
 #             totalNum += dial.index(i)+3 # 그 인덱스(문자열이 2시 위치부터 존재하니까 +3)
 # print(totalNum)
+
+# a=str(input())
+# # reversed() 함수는 이터레이터를 반환하기 때문에 문자열과 직접 비교할 수 없음
+# if a == a[::-1]:
+#     print ("1")
+# else :
+#     print ("0")
+
+
+a=str(input())
+b=str(a.lower())
+alphabetSet = set()
+ # 키,값으로 저장하려면 딕셔너리로 받아야함
+ # fromkeys : 딕셔너리에 키값만 주려면
+alphabetNum = dict.fromkeys(alphabetSet,0) # 딕셔너리
+for i in b:
+    if i.isalpha(): # # 문자가 알파벳인지 확인
+        alphabetSet.add(i) # 알파벳이면 set에 집어넣는다(중복이 안생김)
+        alphabetNum[i] = 0 # 이때 각 알파벳마다 딕셔너리를 초기화시켜줘야함
+for alphabet in b:
+    for setAlpha in alphabetSet:
+        if alphabet in alphabetSet:
+            alphabetNum[alphabet] += 1
+max_count = max(alphabetNum.values())
+        
+if len(max(alphabetNum))>=2:
+    print("?")
+else:
+    print({alphabetNum[alphabet]}.upper())
