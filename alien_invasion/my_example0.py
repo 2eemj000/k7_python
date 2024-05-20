@@ -30,7 +30,6 @@ up_pressed = False
 down_pressed = False
 # alien이 자동으로 움직이도록
 aliens_x_direction = 1 # 1은 오른쪽, -1은 왼쪽
-aliens_y_direction = 1
 
 while True: # 무한루프
     # 키, 마우스 이벤트를 여기에 넣을 것

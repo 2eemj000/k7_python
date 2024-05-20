@@ -1,6 +1,7 @@
 # https://www.pygame.org/docs/ref/event.html#module-pygame.event
 # https://www.pygame.org/docs/ref/key.html?highlight=k_right
 # 오른쪽 마우스 -> refactor로 함수 정의해서 간략하게 할 수 있음
+# F12, 화살표키로 이동가능
 
 import pygame
 
