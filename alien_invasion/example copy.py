@@ -1,18 +1,33 @@
 # https://www.pygame.org/docs/ref/event.html#module-pygame.event
 # https://www.pygame.org/docs/ref/key.html?highlight=k_right
+# 오른쪽 마우스 -> refactor로 함수 정의해서 간략하게 할 수 있음
 
 import pygame
 
 pygame.init()
 
 # set mode, 이미지 두개 로드
-screen_surf = pygame.display.set_mode((1280,720)) # screen_surf,img는 surface니까 rect를 가짐
-ship_img = pygame.image.load('images/ship.bmp')
-alien_img = pygame.image.load('images/alien.bmp')
+def create_screen():
+    screen_surf = pygame.display.set_mode((1280,720))
+    return screen_surf
+
+screen_surf = create_screen() # screen_surf,img는 surface니까 rect를 가짐
+
+
 # rect 위치를 초기화
-ship_rect = ship_img.get_rect()
-ship_rect.midbottom = screen_surf.get_rect().midbottom # 여기서 제공하는 위치함수활용 -> 바닥의 중앙끼리 맞춰줌
-alien_rect = pygame.rect.Rect(200,200,200,200)
+def create_ship(screen_surf):
+    ship_img = pygame.image.load('images/ship.bmp')
+    ship_rect = ship_img.get_rect()
+    ship_rect.midbottom = screen_surf.get_rect().midbottom
+    return ship_img,ship_rect
+
+ship_img, ship_rect = create_ship(screen_surf) # 여기서 제공하는 위치함수활용 -> 바닥의 중앙끼리 맞춰줌
+def create_alien():
+    alien_img = pygame.image.load('images/alien.bmp')
+    alien_rect = pygame.rect.Rect(200,200,200,200)
+    return alien_img,alien_rect
+
+alien_img, alien_rect = create_alien()
 # 총알 담는 바구니
 bullet_rect = None
 bullets = []
