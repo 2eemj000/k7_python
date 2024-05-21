@@ -1,0 +1,4 @@
+! Adding a new line with path method ! 
+! 한글로 추가하려면 encoding 필요 !
+Adding a new line.
+Appending another line.
