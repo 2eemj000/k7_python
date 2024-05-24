@@ -21,3 +21,12 @@
 #         print("multiple")
 #     else:
 #         print("neither")
+
+N,K = map(int, input().split())
+NumList = []
+for i in range(1,N+1):
+    if N%i==0:
+        NumList.append(i)
+if len(NumList)<K:
+    print(0)
+else: print(NumList[K])
