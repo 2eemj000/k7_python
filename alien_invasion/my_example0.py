@@ -23,6 +23,7 @@ for i in range(6):
     aliens.append(alien)
 
 clock = pygame.time.Clock()
+
 # 누르고 있을 때도 실행되도록
 left_pressed = False
 right_pressed = False
@@ -48,7 +49,7 @@ while True: # 무한루프
                     pygame.quit()
                     raise SystemExit
             if event.key == pygame.K_RIGHT:
-                    right_pressed = True
+                right_pressed = True
             elif event.key == pygame.K_LEFT:
                 left_pressed = True
             elif event.key == pygame.K_UP:

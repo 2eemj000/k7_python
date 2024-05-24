@@ -45,7 +45,7 @@ while True:
     screen_surf.fill('white')
     screen_surf.blit(ship_img_surf, ship_img_surf.get_rect())
     screen_surf.blit(font_surf, (100,100, font_surf.get_rect().width, font_surf.get_rect().height))
-    pygame.display.flip()
+    pygame.display.flip() # 이동 후의 화면으로 전환
     clock.tick(60)        
     
 # print(pygame.QUIT)
