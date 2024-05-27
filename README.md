@@ -1,2 +1,2 @@
-python -m pip install --user requests
-pip install bs4
+- python -m pip install --user requests
+- pip install bs4
