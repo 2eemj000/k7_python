@@ -28,6 +28,6 @@ fig = px.scatter_geo(lat=lats, lon=lons, size=mags, title=title,
         color_continuous_scale='Viridis', 
         labels={'color':'Magnitude'}, # labels는 딕셔너리를 받음 (색깔이 뭘 의미하는지 표시)
         projection='natural earth', # 지도의 기본디자인 정해줌 (가장자리 둥글게)
-        hover_name=eq_titles, # 각 지진의 정보를 호버텍스트에 추가함 (마우스올릴때)
+         # 각 지진의 정보를 호버텍스트에 추가함 (마우스올릴때)
     )
 fig.show()
