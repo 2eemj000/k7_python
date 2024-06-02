@@ -23,6 +23,7 @@ for i in range(6):
     aliens.append(alien)
 
 clock = pygame.time.Clock()
+
 # 누르고 있을 때도 실행되도록
 left_pressed = False
 right_pressed = False
@@ -33,7 +34,7 @@ aliens_x_direction = 1 # 1은 오른쪽, -1은 왼쪽
 
 while True: # 무한루프
     # 키, 마우스 이벤트를 여기에 넣을 것
-    for event in pygame.event.get():
+    for event in pygame.event.get(): # 이게 리스트
         if event.type == pygame.QUIT:
             pygame.quit()
             raise SystemExit
@@ -48,7 +49,7 @@ while True: # 무한루프
                     pygame.quit()
                     raise SystemExit
             if event.key == pygame.K_RIGHT:
-                    right_pressed = True
+                right_pressed = True
             elif event.key == pygame.K_LEFT:
                 left_pressed = True
             elif event.key == pygame.K_UP:
@@ -116,7 +117,7 @@ while True: # 무한루프
         for bullet in bullets:
             pygame.draw.rect(screen_surf, 'red', bullet_rect) # pygame.draw.rect 속성맞춰서 적기
 
-    # alien, bullet 충돌 시(colliderect), 둘다 사라지도록 
+    # alien, bullet 충돌 시(colliderect : rect가 겹쳐지면), 둘다 사라지도록 
     for alien in aliens:
         for bullet in bullets:
             if pygame.rect.Rect.colliderect(alien,bullet):
